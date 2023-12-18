@@ -16,33 +16,119 @@
     height: 100px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .filter_field{
-    
-    height: 100%;
+    width: 50%;
+    height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 25px;
 }
 .filter_field p{
     font-size: 20px;
     font-weight: 700;
 }
 .filter_select{
-    width: 300px;
+    width: 80%;
     margin-top: 10px;
     height: 40px;
 }
-.filter_search{
-    width: 500px;
+.content{
+    margin-top: 50px;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+}
+
+.card{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding: 100px;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid gray;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 50px 0;
+}
+.abs{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+}
+.abs div{
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    color: white;
+    background-color: #222222;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:  #42F58A;
+    margin-right: 25px;
+}
+.abs_bottom{
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: all ease 1s;
+}
+.abs_bottom div{
+    width: 50%;
+    height: 100%;
     color: white;
-    margin-left: 50px;
-    font-size: 20px;
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
     cursor: pointer;
+    transition: all ease 0.6s;
+}
+.abs_bottom div:hover{
+    background-color: #414141;
+}
+.card:hover .abs_bottom{
+    opacity: 1;
+}
+.image{
+    width: 25%;
+    height: 100%;
+    padding: 50px;
+    background: url(../../assets/TourIMG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.info{
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+}
+.tittle{
+    width: 100%;
+}
+.name{
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    color: black;
+}
+.tittle p{
+    margin-top: 30px;
+    overflow: hidden;
+    width: 100%;
 }
