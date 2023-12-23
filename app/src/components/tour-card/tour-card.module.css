@@ -1,0 +1,84 @@
+.section{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+}
+.wrapper{
+    width: 70%;
+    height: 100%;
+    margin-top: 80px;
+    padding-bottom: 100px;
+    display: flex;
+}
+
+.content{
+    margin-top: 50px;
+    padding: 25px;
+    width: 60%;
+}
+.data{
+    margin-top: 50px;
+    padding: 25px;
+    width: 40%;
+}
+.tittle{
+    width: 100%;
+    font-size: 48px;
+}
+
+.description{
+    margin-top: 25px;
+    line-height: 25px;
+}
+.benefits{
+    margin-top: 50px;
+}
+.benefits h2{
+    font-style: 32px;
+}
+.benefits ul{
+    margin-top: 25px;
+    width: 100%;
+}
+.benefits ul li{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.data_data{
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px gray;
+    padding: 25px;
+}
+.data_data h1{
+    font-style: 32px;
+    margin-bottom: 35px;
+}
+.data_data p{
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+}
+.data_data p span{
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.button{
+    border-radius: 15px;
+    margin-top: 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px gray;
+    cursor: pointer;
+}

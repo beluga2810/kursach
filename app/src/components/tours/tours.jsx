@@ -78,7 +78,7 @@ const Tours = () =>{
                 </div>
             </div>
             <div className={style.content}>
-                <NavLink>
+                <NavLink to={'/tour'}>
                   <div className={style.card}>
                     <div className={style.abs}>
                       <div>

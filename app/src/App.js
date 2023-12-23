@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Banner from './components/banner/banner'
 import Header from './components/header/header'
 import Tours from './components/tours/tours'
+import TourCard from './components/tour-card/tour-card'
 
 
 const App = () =>{
@@ -13,6 +14,9 @@ const App = () =>{
   </Routes>
   <Routes>
     <Route path="/tours" Component={Tours}/>
+  </Routes>
+  <Routes>
+    <Route path="/tour" Component={TourCard}/>
   </Routes>
 
 </BrowserRouter>
