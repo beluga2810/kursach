@@ -4,6 +4,8 @@ import Banner from './components/banner/banner'
 import Header from './components/header/header'
 import Tours from './components/tours/tours'
 import TourCard from './components/tour-card/tour-card'
+import Recomendation from './components/recomendation/recomendation'
+import FQ from './components/fq/fq'
 
 
 const App = () =>{
@@ -17,6 +19,12 @@ const App = () =>{
   </Routes>
   <Routes>
     <Route path="/tour" Component={TourCard}/>
+  </Routes>
+  <Routes>
+    <Route path="/recomendation" Component={Recomendation}/>
+  </Routes>
+  <Routes>
+    <Route path="/fq" Component={FQ}/>
   </Routes>
 
 </BrowserRouter>

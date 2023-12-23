@@ -21,8 +21,8 @@ const Header = () =>{
             <ul className={style.list}>
                 <NavLink to={'/tours'}><li>Экскурсии</li></NavLink>
                 <li><a to='/search'>Отзывы</a></li>
-                <li><a to='/search'>Рекомендации</a></li>
-                <li><a to='/search'>F&Q</a></li>
+                <NavLink to={'/recomendation'}><li>Рекомендации</li></NavLink>
+                <NavLink to={'/fq'}><li>F&Q</li></NavLink>
                 
                 <li className={style.login}><a to='/accaunt'><UserOutlined /></a></li>
             </ul>
