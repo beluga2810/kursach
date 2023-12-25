@@ -8,6 +8,7 @@ import Recomendation from './components/recomendation/recomendation'
 import FQ from './components/fq/fq'
 import Reviews from './components/reviews/reviews'
 import Auth from './components/auth/auth'
+import Footer from './components/footer/footer'
 
 
 const App = () =>{
@@ -34,6 +35,7 @@ const App = () =>{
   <Routes>
     <Route path="/accaunt" Component={Auth}/>
   </Routes>
+  <Footer/>
 
 </BrowserRouter>
 }

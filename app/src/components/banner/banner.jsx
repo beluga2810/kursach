@@ -79,7 +79,7 @@ const Banner = () =>{
                     <div className={style.DeleteCursor} style={DeleteAnimation ? {opacity: 0} : {opacity: 1}}></div>
                 </div>
                 <p>Туристические поездки по всем городам Беларуси вместе с TourAgency.by</p>
-                <button>Поиск работы</button>
+                <button>Поиск тура</button>
             </div>
         </div>  
 

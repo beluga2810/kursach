@@ -4,6 +4,8 @@ import { Select, Space } from 'antd'
 import {
   SendOutlined
 } from '@ant-design/icons';
+import { useEffect, useState } from 'react';
+import { GetRequestAPI } from '../../api/api';
 
 
 const handleChange = (value) => {
@@ -11,7 +13,50 @@ const handleChange = (value) => {
 };
 
 
+
 const Tours = () =>{
+  
+
+  const [TourMassive, setTourMassive] = useState([])
+  useEffect(()=>{
+    GetRequestAPI.GetAllTours('','').then(data =>{
+      setTourMassive(data)
+    })
+  },[])
+
+  const ToursCard = TourMassive.map(el =><NavLink to={'/tour'}>
+  <div className={style.card}>
+    <div className={style.abs}>
+      <div>
+        Могилёв &nbsp;&nbsp;&nbsp;
+        <SendOutlined /> &nbsp;&nbsp;&nbsp;
+        Минск 
+      </div>
+      <div>300 Br</div>
+    </div>
+    <div className={style.abs_bottom}>
+      <div>Подробнее</div>
+      <div>Купить</div>
+    </div>
+    <div className={style.image}>
+
+    </div>
+    <div className={style.info}>
+      <div className={style.tittle}>
+        <h1 className={style.name}>Экскурсия по минскому вокзалу</h1>
+        <p>
+          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
+          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
+          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
+          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
+          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
+          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
+        </p>
+      </div>
+    </div>
+  </div>
+</NavLink>)
+
     return <section className={style.section}>
         <div className={style.wrapper}>
             <div className={style.filter}>
@@ -78,38 +123,7 @@ const Tours = () =>{
                 </div>
             </div>
             <div className={style.content}>
-                <NavLink to={'/tour'}>
-                  <div className={style.card}>
-                    <div className={style.abs}>
-                      <div>
-                        Могилёв &nbsp;&nbsp;&nbsp;
-                        <SendOutlined /> &nbsp;&nbsp;&nbsp;
-                        Минск 
-                      </div>
-                      <div>300 Br</div>
-                    </div>
-                    <div className={style.abs_bottom}>
-                      <div>Подробнее</div>
-                      <div>Купить</div>
-                    </div>
-                    <div className={style.image}>
-
-                    </div>
-                    <div className={style.info}>
-                      <div className={style.tittle}>
-                        <h1 className={style.name}>Экскурсия по минскому вокзалу</h1>
-                        <p>
-                          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-                          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-                          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-                          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-                          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-                          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </NavLink>
+              {ToursCard}
             </div>
         </div>
     </section>
