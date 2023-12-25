@@ -7,6 +7,7 @@ import TourCard from './components/tour-card/tour-card'
 import Recomendation from './components/recomendation/recomendation'
 import FQ from './components/fq/fq'
 import Reviews from './components/reviews/reviews'
+import Auth from './components/auth/auth'
 
 
 const App = () =>{
@@ -29,6 +30,9 @@ const App = () =>{
   </Routes>
   <Routes>
     <Route path="/reviews" Component={Reviews}/>
+  </Routes>
+  <Routes>
+    <Route path="/accaunt" Component={Auth}/>
   </Routes>
 
 </BrowserRouter>

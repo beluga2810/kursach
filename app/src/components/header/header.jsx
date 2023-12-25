@@ -24,7 +24,7 @@ const Header = () =>{
                 <NavLink to={'/recomendation'}><li>Рекомендации</li></NavLink>
                 <NavLink to={'/fq'}><li>F&Q</li></NavLink>
                 
-                <li className={style.login}><a to='/accaunt'><UserOutlined /></a></li>
+                <NavLink to={'/accaunt'}><li className={style.login}><UserOutlined /></li></NavLink>
             </ul>
         </div>  
         
