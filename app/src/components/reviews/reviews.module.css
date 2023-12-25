@@ -1,0 +1,66 @@
+.section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrapper{
+    width: 70%;
+    height: 100%;
+    padding-top: 50px;
+    margin-top: 80px;
+    padding-bottom: 100px;
+    flex-direction: column;
+    display: flex;
+}
+.name{
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+.name_text{
+    font-size: 20px;
+    margin-bottom: 100px;
+}
+.content{
+    display: flex;
+    overflow-x: scroll;
+}
+.card
+{
+    width: 100%;
+    padding: 25px;
+    height: 250px;
+    min-width: 100%;
+}
+.tittle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.tittle h1{
+    font-size: 32px;
+    margin-right: 25px;
+}
+.text{
+    margin-top: 30px;
+}
+.add{
+    width: 100%;
+    margin-top: 100px;
+}
+.add textarea{
+    width: 100%;
+    height: 150px;
+    margin-top: 50px;
+    padding: 25px;
+}
+.button{
+    width: 600px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42F58A;
+    color: white;
+    cursor: pointer;
+    margin-top: 50px;
+}

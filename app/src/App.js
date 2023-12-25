@@ -6,6 +6,7 @@ import Tours from './components/tours/tours'
 import TourCard from './components/tour-card/tour-card'
 import Recomendation from './components/recomendation/recomendation'
 import FQ from './components/fq/fq'
+import Reviews from './components/reviews/reviews'
 
 
 const App = () =>{
@@ -25,6 +26,9 @@ const App = () =>{
   </Routes>
   <Routes>
     <Route path="/fq" Component={FQ}/>
+  </Routes>
+  <Routes>
+    <Route path="/reviews" Component={Reviews}/>
   </Routes>
 
 </BrowserRouter>
