@@ -21,7 +21,7 @@ const App = () =>{
     <Route path="/tours" Component={Tours}/>
   </Routes>
   <Routes>
-    <Route path="/tour" Component={TourCard}/>
+    <Route path="/tour/:id" Component={TourCard}/>
   </Routes>
   <Routes>
     <Route path="/recomendation" Component={Recomendation}/>

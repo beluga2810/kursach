@@ -24,15 +24,15 @@ const Tours = () =>{
     })
   },[])
 
-  const ToursCard = TourMassive.map(el =><NavLink to={'/tour'}>
+  const ToursCard = TourMassive.map(el =><NavLink to={`/tour/${el.id}`}>
   <div className={style.card}>
     <div className={style.abs}>
       <div>
-        Могилёв &nbsp;&nbsp;&nbsp;
+        {el.from} &nbsp;&nbsp;&nbsp;
         <SendOutlined /> &nbsp;&nbsp;&nbsp;
-        Минск 
+        {el.to}
       </div>
-      <div>300 Br</div>
+      <div>{el.price} Br</div>
     </div>
     <div className={style.abs_bottom}>
       <div>Подробнее</div>
@@ -43,14 +43,9 @@ const Tours = () =>{
     </div>
     <div className={style.info}>
       <div className={style.tittle}>
-        <h1 className={style.name}>Экскурсия по минскому вокзалу</h1>
+        <h1 className={style.name}>{el.name}</h1>
         <p>
-          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-          Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-          An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
+          {el.desckription}
         </p>
       </div>
     </div>

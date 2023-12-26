@@ -1,9 +1,30 @@
+import { useEffect, useState } from 'react';
+import { GetRequestAPI } from '../../api/api';
 import style from './reviews.module.css'
 import { Button, Rate } from 'antd';
 
 
 const Reviews = () =>{
-    return <section className={style.section}>
+
+
+    let [reviews, setReviews] = useState([])
+
+    useEffect(()=>{
+        GetRequestAPI.GetReviews().then(data =>{
+        setReviews(data)
+        console.log(data)
+        })
+      },[])
+    let ReviewsCard = reviews.map(el => <div className={style.card}>
+        <div className={style.tittle}>
+            <h1>{el.name}</h1>
+            <Rate value={el.rate} disabled/>
+        </div>
+        <p className={style.text}>
+            {el.text}
+        </p>
+    </div>)
+    return reviews.length > 0 && <section className={style.section}>
         <div className={style.wrapper}>
             <h1 className={style.name}>Отзывы</h1>
             <p className={style.name_text}>
@@ -13,18 +34,7 @@ const Reviews = () =>{
                 error. Accusantium officia voluptatum quidem eaque.
             </p>
             <div className={style.content}>
-                <div className={style.card}>
-                    <div className={style.tittle}>
-                        <h1>Rocket Skywalker</h1>
-                        <Rate value={5} disabled/>
-                    </div>
-                    <p className={style.text}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, 
-                        consequatur optio a debitis cumque ducimus, deleniti sunt culpa 
-                        maiores dicta modi, dolor pariatur amet tenetur itaque? 
-                        Amet non sequi incidunt!
-                    </p>
-                </div>
+                {ReviewsCard}
             </div>
             <div className={style.add}>
                 <div className={style.tittle}>    

@@ -16,7 +16,16 @@ export const GetRequestAPI = {
             return Response.data
         })
     },
-
+    GetTour(id) {
+        return instanse.post('/tour', {id}).then(Response => {
+            return Response.data
+        })
+    },
+    GetReviews() {
+        return instanse.get('/reviews').then(Response => {
+            return Response.data
+        })
+    },
 }
 
 export const PostRequestAPI = {

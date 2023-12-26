@@ -1,40 +1,69 @@
+import { useEffect, useId, useState } from 'react'
 import style from './tour-card.module.css'
-
+import { useLocation } from 'react-router-dom';
+import { GetRequestAPI } from '../../api/api';
+import mogilev_first from '../../assets/mogilev_first.png'
+import mogilev_second from '../../assets/mogilev_second.png'
+import mogilev_3th from '../../assets/mogilev_3th.png'
+import {
+    LeftOutlined,
+    RightOutlined,
+  } from '@ant-design/icons'
 
 
 const TourCard = () =>{
-    return <section className={style.section}>
+
+    let location = useLocation()
+
+    let [currentSliderStep, setCurrentSliderStep] = useState(0)
+    
+    let id = location.pathname.slice(6)
+    
+    console.log(id)
+
+    let [tour, setTour] = useState()
+
+    useEffect(()=>{
+        GetRequestAPI.GetTour(+id).then(data =>{
+          setTour(data[0])
+          console.log(data[0])
+        })
+      },[id])
+
+    return tour && <section className={style.section}>
         <div className={style.wrapper}>
             <div className={style.content}>
-                <h1 className={style.tittle}>Минский вокзал</h1>
-                <p className={style.description}>
-                    Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-                    An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-                    Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-                    An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-                    Ultimate Guide to Visiting Harry Potter Studio Tour London by Warner Bros in Leavesden. 
-                    An absolute must visit for Harry Potter fans in London! #whatshotblog #harrypotter #londontravel #harrypotterfan
-                </p>
-                <div className={style.benefits}>
-                    <h2>Преимущества</h2>
-                    <ul>
-                        <li>Доступ к интернету во время дороги</li>
-                        <li>Бесплатные шоколадные батончики</li>
-                        <li>Оплаченный номер в отеле hilton</li>
-                        <li>Проффесиональный гид, стрессоустойчивый</li>
-                    </ul>
+                <h1 className={style.tittle}>{tour.name}</h1>
+                <div className={style.slider}>
+                    <div className={style.slider_img}>
+                        {currentSliderStep === 0 ? <img src={mogilev_first}/> : currentSliderStep === 1 ? <img src={mogilev_second}/> : <img src={mogilev_3th}/>}
+                    </div>
+                    <div className={style.slider_arrows}>
+                        <LeftOutlined className={style.arrow} onClick={() => {
+                                !(currentSliderStep === 0) ? setCurrentSliderStep(currentSliderStep-1) : setCurrentSliderStep(2)
+                            }
+                        }/>
+                        <RightOutlined className={style.arrow} onClick={() => {
+                                !(currentSliderStep === 2) ? setCurrentSliderStep(currentSliderStep+1) : setCurrentSliderStep(0)
+                            }
+                        }/>
+            
+                    </div>
                 </div>
+                <p className={style.description}>
+                    {tour.desckription}
+                </p>
             </div>
             <div className={style.data}>
                 <div className={style.data_data}>
-                    <h1>ООО "ТУРМИНСК КЕПОВО"</h1>
-                    <p><span>Стоимость</span> : 300 Br</p>
-                    <p><span>Точка отправления</span> : Могилёв, Крыница</p>
-                    <p><span>Направление</span> : Минск, вокзал</p>
-                    <p><span>Дата отправления</span> : 17.01.2023</p>
-                    <p><span>Время отправления</span> : 09:00</p>
-                    <p><span>Дата обратного отправления</span> : 18.01.2023</p>
-                    <p><span>Время обратного отправления</span> : 18:00</p>
+                    <h1>{tour.company}</h1>
+                    <p><span>Стоимость</span> : {tour.price} Br</p>
+                    <p><span>Точка отправления</span> : {tour.fromAdress}</p>
+                    <p><span>Направление</span> : {tour.to}</p>
+                    <p><span>Дата отправления</span> : {tour.fromDate}</p>
+                    <p><span>Время отправления</span> : {tour.fromTime}</p>
+                    <p><span>Дата обратного отправления</span> : {tour.toDate}</p>
+                    <p><span>Время обратного отправления</span> : {tour.toTime}</p>
                 </div>
                 <div className={style.button}>
                     Купить
