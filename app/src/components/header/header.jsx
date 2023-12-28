@@ -4,13 +4,20 @@ import { useEffect, useState } from 'react'
 import {
     UserOutlined
 } from '@ant-design/icons'
+import { useDispatch, useSelector } from 'react-redux'
+import { ProfileCookie } from '../redux/profile-reducer'
+import { getProfileDate } from '../redux/profile-reducer-selector'
 
 
 
 const Header = () =>{
 
-    
+    let Profile = useSelector(getProfileDate)
+    let dispatch = useDispatch()
 
+    useEffect(() =>{
+        dispatch(ProfileCookie())
+    }, [])
 
     return <section className={style.section}>
         <div className={style.wrapper}>
@@ -19,6 +26,7 @@ const Header = () =>{
                 <h1><a>TourAgency</a></h1>
             </div></NavLink>
             <ul className={style.list}>
+                {Profile.status === 'admin' && <NavLink to={'/create'}><li>Экскурсии</li></NavLink>}
                 <NavLink to={'/tours'}><li>Экскурсии</li></NavLink>
                 <NavLink to={'/reviews'}><li>Отзывы</li></NavLink>
                 <NavLink to={'/recomendation'}><li>Рекомендации</li></NavLink>

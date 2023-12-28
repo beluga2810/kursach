@@ -9,6 +9,7 @@ import FQ from './components/fq/fq'
 import Reviews from './components/reviews/reviews'
 import Auth from './components/auth/auth'
 import Footer from './components/footer/footer'
+import Create from './components/create/create'
 
 
 const App = () =>{
@@ -34,6 +35,9 @@ const App = () =>{
   </Routes>
   <Routes>
     <Route path="/accaunt" Component={Auth}/>
+  </Routes>
+  <Routes>
+    <Route path="/create" Component={Create}/>
   </Routes>
   <Footer/>
 

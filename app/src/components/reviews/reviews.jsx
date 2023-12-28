@@ -1,13 +1,20 @@
 import { useEffect, useState } from 'react';
-import { GetRequestAPI } from '../../api/api';
+import { GetRequestAPI, PostRequestAPI } from '../../api/api';
 import style from './reviews.module.css'
 import { Button, Rate } from 'antd';
+import { useSelector } from 'react-redux';
+import { getProfileDate } from '../redux/profile-reducer-selector';
 
 
 const Reviews = () =>{
 
 
+
     let [reviews, setReviews] = useState([])
+
+    let [rate, setRate] = useState([])
+    let [text, setText] = useState([])
+    let ProfileDate = useSelector(getProfileDate)
 
     useEffect(()=>{
         GetRequestAPI.GetReviews().then(data =>{
@@ -39,10 +46,14 @@ const Reviews = () =>{
             <div className={style.add}>
                 <div className={style.tittle}>    
                     <h1>Оставить отзыв</h1>
-                    <Rate onChange={(e) => console.log(e)}/>
+                    <Rate onChange={(e) => setRate(e)}/>
                 </div>
-                <textarea name="" id="" cols="30" rows="10" maxLength={400}></textarea>
-                <div className={style.button}>Отправить</div>
+                <textarea name="" id="" cols="30" rows="10" maxLength={400} onChange={(e) => setText(e.target.value)}></textarea>
+                <div className={style.button} 
+                    onClick={() =>{
+                        PostRequestAPI.SendReview(rate, ProfileDate.name, text)   
+                    }}
+                >Отправить</div>
             </div>
         </div>
     </section>
