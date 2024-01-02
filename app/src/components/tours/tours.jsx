@@ -8,23 +8,30 @@ import { useEffect, useState } from 'react';
 import { GetRequestAPI } from '../../api/api';
 
 
-const handleChange = (value) => {
-  console.log(`selected ${value}`);
-};
 
 
 
 const Tours = () =>{
   
-
+  
   const [TourMassive, setTourMassive] = useState([])
   useEffect(()=>{
     GetRequestAPI.GetAllTours('','').then(data =>{
       setTourMassive(data)
     })
   },[])
+  
+  
+  let [from, setFrom] = useState('')
+  let [to, setTo] = useState('')
+  const handleChangeFrom = (value) => {
+    setFrom(value)
+  }
+  const handleChangeTo = (value) => {
+    setTo(value)
+  }
 
-  const ToursCard = TourMassive.map(el =><NavLink to={`/tour/${el.id}`}>
+  const ToursCard = TourMassive.filter(el => from ? el.from === from : el).filter(el => to ? el.to === to : el).map(el =><NavLink to={`/tour/${el.id}`}>
   <div className={style.card}>
     <div className={style.abs}>
       <div>
@@ -57,7 +64,7 @@ const Tours = () =>{
             <div className={style.filter}>
                 <div className={style.filter_field}>
                     <p>Откуда?</p>
-                    <Select defaultValue="не выбрано" onChange={handleChange}  className={style.filter_select}
+                    <Select defaultValue="не выбрано" onChange={handleChangeFrom}  className={style.filter_select}
                         options={[
                           {
                             value: 'Брест',
@@ -88,7 +95,7 @@ const Tours = () =>{
                 </div>
                 <div className={style.filter_field}>   
                     <p>Куда?</p>
-                    <Select defaultValue="не выбрано" onChange={handleChange}  className={style.filter_select}
+                    <Select defaultValue="не выбрано" onChange={handleChangeTo}  className={style.filter_select}
                         options={[
                           {
                             value: 'Брест',
