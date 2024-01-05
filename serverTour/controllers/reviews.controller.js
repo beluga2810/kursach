@@ -7,7 +7,7 @@ class ReviewsController{
         const cookieValue = req.cookies.id
         try {
             const newReview = await db.query(
-            'INSERT INTO reviews (rate, name, text, user_id) VALUES ($1, $2, $3, $4) RETURNING *', [rate, name, text, 3])
+            'INSERT INTO reviews (rate, name, text, user_id) VALUES ($1, $2, $3, $4) RETURNING *', [rate, name, text, cookieValue])
             res.json(newReview.rows[0])
         } catch (error) {
             console.error(error)
@@ -20,8 +20,8 @@ class ReviewsController{
         res.json(reviews.rows)
         } catch (error) {
         
-        console.error(error);
-        res.status(500).json('Ошибка сервера');
+            console.error(error);
+            res.status(500).json('Ошибка сервера');
         }
         }
 
