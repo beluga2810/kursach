@@ -39,8 +39,8 @@ export const auth = (profile) =>({type: AUTH, profile})
 export const SetProfile = (profile) => (dispatch) =>
 {
     console.log('thunkCreatore SetProfile was called')
-        dispatch(auth(profile[0]))
-        SetCookie(profile[0].id)
+        dispatch(auth(profile))
+        SetCookie(profile.id)
 
         // console.log('thunkCreatore SetProfile was called', 'ProfileCredits' + ' ' + data[0])
 }
@@ -48,8 +48,8 @@ export const ProfileCookie = () => (dispatch) =>
 {
     console.log('thunkCreatore ProfileCookie was called')
     GetRequestAPI.GetProfile().then(data =>{
-        console.log(data[0])
-        dispatch(auth(data[0]))
+        console.log(data)
+        dispatch(auth(data))
     })
 }
 

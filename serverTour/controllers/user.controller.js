@@ -21,8 +21,8 @@ class UserController{
         res.json(user.rows[0])
     }
     async getAuthUser(req, res){
-        const cookieValue = req.cookies.id
-        try {
+        
+        try {const cookieValue = req.cookies.id
             const user = await db.query(`SELECT * FROM users WHERE (id) = ($1)`, [cookieValue])  
             res.json(user.rows[0])
         } catch (error) {

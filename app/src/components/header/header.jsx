@@ -19,7 +19,7 @@ const Header = () =>{
         dispatch(ProfileCookie())
     }, [])
 
-    return <section className={style.section}>
+    return Profile && <section className={style.section}>
         <div className={style.wrapper}>
             <NavLink to={'/'}><div className={style.logotype}>
                 <img src={''} alt="" />

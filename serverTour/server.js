@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 80
 const cors = require('cors')
 const userRouter = require('./routes/user.routes.js')
 const reviewsRouter = require('./routes/reviews.routes.js')
+const toursRouter = require('./routes/tours.routes.js')
 const app = express()
 
 
@@ -65,7 +66,7 @@ app.use(cookieParser())
 
 
 
-app.use('/api', userRouter, reviewsRouter)
+app.use('/api', userRouter, reviewsRouter, toursRouter)
 
 
 // app.get('/tours', (req, res) =>{

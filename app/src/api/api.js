@@ -29,7 +29,7 @@ export const GetRequestAPI = {
         })
     },
     GetProfile(){
-        return instanse.get('/user/auth').then(Response =>{
+        return instanse.get('/api/user/auth').then(Response =>{
             return Response.data
         })
     }
@@ -38,12 +38,12 @@ export const GetRequestAPI = {
 
 export const PostRequestAPI = {
     Registration(email, password, name){
-        return instanse.post('/users', { email, password, name }).then(Response => {
+        return instanse.post('/api/users', { email, password, name }).then(Response => {
             return Response.data 
         })
     },
     AuthCheck(email, password){
-        return instanse.post('/user', { email, password}).then(Response => {
+        return instanse.post('/api/user', { email, password}).then(Response => {
             return Response.data 
         })
     },
