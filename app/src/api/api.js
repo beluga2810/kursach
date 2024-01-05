@@ -24,7 +24,7 @@ export const GetRequestAPI = {
         })
     },
     GetReviews() {
-        return instanse.get('/reviews').then(Response => {
+        return instanse.get('/api/reviews').then(Response => {
             return Response.data
         })
     },

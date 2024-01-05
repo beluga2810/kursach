@@ -10,47 +10,47 @@ const app = express()
 
 
 
-let DataBase = {
-    tours: [
-        {
-            id: 0,
-            name: 'Могилёв',
-            fromm: 'Минск',
-            too: 'Могилёв',
-            price: 300,
-            desckription: 'bfrebufenibgvuebvhbqe f yugui3f er giugfiuhu',
-            company: 'ООО ТУРАГЕНСТВО',
-            fromAdress: 'Минск, Кирова 8',
-            fromData: '24.10.2023', 
-            fromTime: '18:00',
-            toDate: '25.10.1232',
-            toTime: '18:00'
-        }
-    ],
-    reviews: [
-        {
-            id: 0,
-            rate: 5,
-            name: 'Egor',
-            text: 'good tour. Suggest all my family. Lorem goovmsk kygvh giyguishily yuhgaiorhyiy gugiy ui ug yugaufehio'
-        },
-        {
-            id: 0,
-            rate: 5,
-            name: 'Vannya',
-            text: 'good tour. Suggest all my family. Lorem goovmsk kygvh giyguishily yuhgaiorhyiy gugiy ui ug yugaufehio'
-        }
-    ],
-    users: [
-        {
-            status: 'user',
-            id: 0,
-            name: 'Yani',
-            email: 'devyangyani@gmail.com',
-            password: '123qwerty123'
-        }
-    ]
-}
+// let DataBase = {
+//     tours: [
+//         {
+//             id: 0,
+//             name: 'Могилёв',
+//             fromm: 'Минск',
+//             too: 'Могилёв',
+//             price: 300,
+//             desckription: 'bfrebufenibgvuebvhbqe f yugui3f er giugfiuhu',
+//             company: 'ООО ТУРАГЕНСТВО',
+//             fromAdress: 'Минск, Кирова 8',
+//             fromData: '24.10.2023', 
+//             fromTime: '18:00',
+//             toDate: '25.10.1232',
+//             toTime: '18:00'
+//         }
+//     ],
+//     reviews: [
+//         {
+//             id: 0,
+//             rate: 5,
+//             name: 'Egor',
+//             text: 'good tour. Suggest all my family. Lorem goovmsk kygvh giyguishily yuhgaiorhyiy gugiy ui ug yugaufehio'
+//         },
+//         {
+//             id: 0,
+//             rate: 5,
+//             name: 'Vannya',
+//             text: 'good tour. Suggest all my family. Lorem goovmsk kygvh giyguishily yuhgaiorhyiy gugiy ui ug yugaufehio'
+//         }
+//     ],
+//     users: [
+//         {
+//             status: 'user',
+//             id: 0,
+//             name: 'Yani',
+//             email: 'devyangyani@gmail.com',
+//             password: '123qwerty123'
+//         }
+//     ]
+// }
 
 
 

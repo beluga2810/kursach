@@ -17,7 +17,7 @@ class ReviewsController{
     async getReviews(req, res) {
         try {
         const reviews = await db.query('SELECT * FROM reviews');
-        res.json(reviews.rows);
+        res.json(reviews.rows)
         } catch (error) {
         
         console.error(error);
