@@ -21,7 +21,7 @@ const ProfileReducer = (state = initialState, action) =>{
         case 'AUTH' : {
             let newState = {...state}
             newState.Profile = {...state.Profile}
-            newState.Profile = action.profile
+            newState.Profile = action.profile && action.profile
             console.log(action.profile)
             return newState
             

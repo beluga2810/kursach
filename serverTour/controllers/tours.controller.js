@@ -26,7 +26,7 @@ class TourController{
     async getOneTour(req, res){
         const id = req.body.id
         try {
-            const user = await db.query(`SELECT * FROM users WHERE (id) = ($1)`, [id])  
+            const user = await db.query(`SELECT * FROM tours WHERE (id) = ($1)`, [id])  
             res.json(user.rows[0])
         } catch (error) {
         console.error(error);

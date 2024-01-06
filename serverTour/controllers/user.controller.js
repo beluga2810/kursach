@@ -21,13 +21,21 @@ class UserController{
         res.json(user.rows[0])
     }
     async getAuthUser(req, res){
-        
-        try {const cookieValue = req.cookies.id
-            const user = await db.query(`SELECT * FROM users WHERE (id) = ($1)`, [cookieValue])  
-            res.json(user.rows[0])
+        const cookieValue = req.cookies.id
+        let initProfile = {
+            status: '',
+            id: '',
+            email: '',
+            name: '',
+            password: '',
+        }
+        try {
+            const user = await db.query('SELECT * FROM users WHERE (id) = ($1)', [cookieValue])
+            user.rowCount === 0 ? res.json(initProfile) : res.json(user.rows[0])
+
         } catch (error) {
         console.error(error);
-        res.json('Ошибка сервера')
+        res.json(initProfile)
       }
     }
     async updateUser(req, res){

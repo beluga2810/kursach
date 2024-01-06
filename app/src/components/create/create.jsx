@@ -6,18 +6,18 @@ import { PostRequestAPI } from '../../api/api'
 
 const Create = () =>{
 
-    let [Name, setName] = useState()
-    let [Desckription, setDesckription] = useState()
-    let [From, setFrom] = useState()
-    let [To, setTo] = useState()
-    let [Price, setPrice] = useState()
-    let [Company, setCompany] = useState()
-    let [FromAdress, setFromAdress] = useState()
-    let [FromData, setFromData] = useState()
-    let [FromTime, setFromTime] = useState()
-    let [ToTime, setToTime] = useState()
-    let [ToDate, setToDate] = useState()
-
+    let [name, setName] = useState()
+    let [description, setDesckription] = useState()
+    let [from_location, setFrom] = useState()
+    let [to_location, setTo] = useState()
+    let [price, setPrice] = useState()
+    let [company, setCompany] = useState()
+    let [from_address, setFromAdress] = useState()
+    let [from_date, setFromData] = useState()
+    let [from_time, setFromTime] = useState()
+    let [to_time, setToTime] = useState()
+    let [to_date, setToDate] = useState()
+    let [transport, setTransport] = useState()
 
     return <section className={style.section}>
         <div className={style.wrapper}>
@@ -31,50 +31,54 @@ const Create = () =>{
             </div>
             <div className={style.input_field}>
                 <p>Название</p>
-                <input type="text" value={Name} onChange={(e) => setName(e.target.value)}/>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Описание</p>
-                <textarea type="text" value={Desckription} onChange={(e) => setDesckription(e.target.value)}/>
+                <textarea type="text" value={description} onChange={(e) => setDesckription(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Компания</p>
-                <textarea type="text" value={Company} onChange={(e) => setCompany(e.target.value)}/>
+                <textarea type="text" value={company} onChange={(e) => setCompany(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Откуда</p>
-                <input type="text" value={From} onChange={(e) => setFrom(e.target.value)}/>
+                <input type="text" value={from_location} onChange={(e) => setFrom(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Куда</p>
-                <input type="text" value={To} onChange={(e) => setTo(e.target.value)}/>
+                <input type="text" value={to_location} onChange={(e) => setTo(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Место подачи транспорта</p>
-                <input type="text" value={FromAdress} onChange={(e) => setFromAdress(e.target.value)}/>
+                <input type="text" value={from_address} onChange={(e) => setFromAdress(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Время отъезда туда</p>
-                <input type="text" value={FromTime} onChange={(e) => setFromTime(e.target.value)}/>
+                <input type="text" value={from_time} onChange={(e) => setFromTime(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Дата отъезда туда</p>
-                <input type="text" value={FromData} onChange={(e) => setFromData(e.target.value)}/>
+                <input type="text" value={from_date} onChange={(e) => setFromData(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Время отъезда обратно</p>
-                <input type="text" value={ToTime} onChange={(e) => setToTime(e.target.value)}/>
+                <input type="text" value={to_time} onChange={(e) => setToTime(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Дата отъезда обратно</p>
-                <input type="text" value={ToDate} onChange={(e) => setToDate(e.target.value)}/>
+                <input type="text" value={to_date} onChange={(e) => setToDate(e.target.value)}/>
             </div>
             <div className={style.input_field}>
                 <p>Стоимость</p>
-                <input type="text" value={Price} onChange={(e) => setPrice(e.target.value)}/>
+                <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}/>
+            </div>
+            <div className={style.input_field}>
+                <p>Транспорт</p>
+                <input type="text" value={transport} onChange={(e) => setTransport(e.target.value)}/>
             </div>
             <div className={style.button} onClick={() =>{
-                PostRequestAPI.AddEvent(Name, Desckription, From, To, Price, Company, FromAdress, FromData, FromTime, ToTime, ToDate)
+                PostRequestAPI.AddEvent( name, from_location, to_location, price, description, company, from_address, from_date, from_time, to_date, to_time, transport )
                 alert('вы создали экскурсию')
             }}>Создать</div>
         </div>

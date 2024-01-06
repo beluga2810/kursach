@@ -25,8 +25,8 @@ const TourCard = () =>{
 
     useEffect(()=>{
         GetRequestAPI.GetTour(+id).then(data =>{
-          setTour(data[0])
-          console.log(data[0])
+          setTour(data)
+          console.log(data)
         })
       },[id])
 
@@ -51,19 +51,19 @@ const TourCard = () =>{
                     </div>
                 </div>
                 <p className={style.description}>
-                    {tour.desckription}
+                    {tour.description}
                 </p>
             </div>
             <div className={style.data}>
                 <div className={style.data_data}>
                     <h1>{tour.company}</h1>
                     <p><span>Стоимость</span> : {tour.price} Br</p>
-                    <p><span>Точка отправления</span> : {tour.fromAdress}</p>
-                    <p><span>Направление</span> : {tour.to}</p>
-                    <p><span>Дата отправления</span> : {tour.fromDate}</p>
-                    <p><span>Время отправления</span> : {tour.fromTime}</p>
-                    <p><span>Дата обратного отправления</span> : {tour.toDate}</p>
-                    <p><span>Время обратного отправления</span> : {tour.toTime}</p>
+                    <p><span>Точка отправления</span> : {tour.from_address}</p>
+                    <p><span>Направление</span> : {tour.to_location}</p>
+                    <p><span>Дата отправления</span> : {tour.from_date}</p>
+                    <p><span>Время отправления</span> : {tour.from_time}</p>
+                    <p><span>Дата обратного отправления</span> : {tour.to_date}</p>
+                    <p><span>Время обратного отправления</span> : {tour.to_time}</p>
                 </div>
                 <div className={style.button}>
                     Купить
@@ -73,7 +73,7 @@ const TourCard = () =>{
     </section>
 }
 
-
+// name, from_location, to_location, price, description, company, from_address, from_date, from_time, to_date, to_time, transport
 
 
 export default TourCard
