@@ -55,7 +55,7 @@ CREATE TABLE reviews (
 -- CREATE TABLE cities (
 --     id SERIAL PRIMARY KEY,
 --     name VARCHAR(255) NOT NULL,
--- 	cities_id INTEGER REFERENCES tours(id)
+-- 	tour_id INTEGER REFERENCES tours(id)
 -- );
 
 
@@ -70,7 +70,7 @@ CREATE TABLE reviews (
 --     address VARCHAR(255),
 --     phone_number VARCHAR(20),
 --     email VARCHAR(255),
--- 	companies_id INTEGER REFERENCES tours(id)
+-- 	tour_id INTEGER REFERENCES tours(id)
 -- );
 
 
