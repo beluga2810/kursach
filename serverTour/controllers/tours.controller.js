@@ -23,16 +23,16 @@ class TourController{
         const tours = await db.query('SELECT * FROM tours')
         res.json(tours.rows)
     }
-    // async getOneTour(req, res){
-        
-    //     try {const cookieValue = req.cookies.id
-    //         const user = await db.query(`SELECT * FROM users WHERE (id) = ($1)`, [cookieValue])  
-    //         res.json(user.rows[0])
-    //     } catch (error) {
-    //     console.error(error);
-    //     res.json('Ошибка сервера')
-    //   }
-    // }
+    async getOneTour(req, res){
+        const id = req.body.id
+        try {
+            const user = await db.query(`SELECT * FROM users WHERE (id) = ($1)`, [id])  
+            res.json(user.rows[0])
+        } catch (error) {
+        console.error(error);
+        res.json('Ошибка сервера')
+      }
+    }
 }
 
 module.exports = new TourController()

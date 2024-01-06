@@ -14,12 +14,12 @@ const instanse = axios.create({
 
 export const GetRequestAPI = {
     GetAllTours(from, to) {
-        return instanse.get('/tours', {from, to}).then(Response => {
+        return instanse.get('api/tours', {from, to}).then(Response => {
             return Response.data
         })
     },
     GetTour(id) {
-        return instanse.post('/tour', {id}).then(Response => {
+        return instanse.post('api/tour', {id}).then(Response => {
             return Response.data
         })
     },
@@ -52,8 +52,8 @@ export const PostRequestAPI = {
             return Response.data 
         })
     },
-    AddEvent(Name, Desckription, From, To, Price, Company, FromAdress, FromData, FromTime, ToTime, ToDate){
-        return instanse.post('/addEvent', { Name, Desckription, From, To, Price, Company, FromAdress, FromData, FromTime, ToTime, ToDate }).then(Response => {
+    AddEvent( name, from_location, to_location, price, description, company, from_address, from_date, from_time, to_date, to_time, transport ){
+        return instanse.post('/api/tour/create', { name, from_location, to_location, price, description, company, from_address, from_date, from_time, to_date, to_time, transport }).then(Response => {
             return Response.data 
         })
     },
