@@ -7,7 +7,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { ProfileCookie } from '../redux/profile-reducer'
 import { getProfileDate } from '../redux/profile-reducer-selector'
-
+import logo from '../../assets/travel.avif'
 
 
 const Header = () =>{
@@ -22,11 +22,11 @@ const Header = () =>{
     return Profile && <section className={style.section}>
         <div className={style.wrapper}>
             <NavLink to={'/'}><div className={style.logotype}>
-                <img src={''} alt="" />
+                <img src={logo} alt="" />
                 <h1><a>TourAgency</a></h1>
             </div></NavLink>
             <ul className={style.list}>
-                {Profile.status === 'admin' && <NavLink to={'/create'}><li>Экскурсии</li></NavLink>}
+                {Profile.status === 'admin' && <NavLink to={'/create'}><li>Создать экскурсию</li></NavLink>}
                 <NavLink to={'/tours'}><li>Экскурсии</li></NavLink>
                 <NavLink to={'/reviews'}><li>Отзывы</li></NavLink>
                 <NavLink to={'/recomendation'}><li>Рекомендации</li></NavLink>

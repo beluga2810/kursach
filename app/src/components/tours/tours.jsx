@@ -11,6 +11,7 @@ import { GetRequestAPI } from '../../api/api';
 
 
 
+
 const Tours = () =>{
   
   
@@ -20,7 +21,7 @@ const Tours = () =>{
       setTourMassive(data)
     })
   },[])
-  
+  let [SearchText, setSearchText] = useState('')
   
   let [from, setFrom] = useState('')
   let [to, setTo] = useState('')
@@ -30,14 +31,14 @@ const Tours = () =>{
   const handleChangeTo = (value) => {
     setTo(value)
   }
-
-  const ToursCard = TourMassive.filter(el => from ? el.from === from : el).filter(el => to ? el.to === to : el).map(el =><NavLink to={`/tour/${el.id}`}>
+  // name, from_location, to_location, price, description, company, from_address, from_date, from_time, to_date, to_time, transport 
+  const ToursCard = TourMassive.filter(el => from ? el.from_location === from : el).filter(el => el.name.includes(SearchText)).filter(el => to ? el.to_location === to : el).map(el =><NavLink to={`/tour/${el.id}`}>
   <div className={style.card}>
     <div className={style.abs}>
       <div>
-        {el.from} &nbsp;&nbsp;&nbsp;
+        {el.from_location} &nbsp;&nbsp;&nbsp;
         <SendOutlined /> &nbsp;&nbsp;&nbsp;
-        {el.to}
+        {el.to_location}
       </div>
       <div>{el.price} Br</div>
     </div>
@@ -52,7 +53,7 @@ const Tours = () =>{
       <div className={style.tittle}>
         <h1 className={style.name}>{el.name}</h1>
         <p>
-          {el.desckription}
+          {el.description}
         </p>
       </div>
     </div>
@@ -61,6 +62,7 @@ const Tours = () =>{
 
     return <section className={style.section}>
         <div className={style.wrapper}>
+            <input value={SearchText} className={style.SearchText} type="text" placeholder='Введите название тура' onChange={(e) => setSearchText(e.target.value)} />
             <div className={style.filter}>
                 <div className={style.filter_field}>
                     <p>Откуда?</p>

@@ -141,3 +141,12 @@
     overflow: hidden;
     width: 100%;
 }
+
+.SearchText{
+    margin-top: 50px;
+    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    padding-left: 25px;
+    border: 1px solid gray;
+}

@@ -33,6 +33,16 @@ class TourController{
         res.json('Ошибка сервера')
       }
     }
+    async deleteTour(req, res) {
+      const tourId = req.body.id;
+      try {
+        const result = await db.query('DELETE FROM tours WHERE id = $1', [tourId]);
+        res.json(result.rows[0]);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json('Ошибка сервера');
+      }
+    }
 }
 
 module.exports = new TourController()
