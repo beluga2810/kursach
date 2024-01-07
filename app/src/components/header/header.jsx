@@ -27,10 +27,11 @@ const Header = () =>{
             </div></NavLink>
             <ul className={style.list}>
                 {Profile.status === 'admin' && <NavLink to={'/create'}><li>Создать экскурсию</li></NavLink>}
+                {Profile.status === 'admin' && <NavLink to={'/delete'}><li>Удалить экскурсию</li></NavLink>}
                 <NavLink to={'/tours'}><li>Экскурсии</li></NavLink>
                 <NavLink to={'/reviews'}><li>Отзывы</li></NavLink>
                 <NavLink to={'/recomendation'}><li>Рекомендации</li></NavLink>
-                <NavLink to={'/fq'}><li>F&Q</li></NavLink>
+                <NavLink to={'/fq'}><li>FAQ</li></NavLink>
                 
                 <NavLink to={'/accaunt'}><li className={style.login}><UserOutlined /></li></NavLink>
             </ul>

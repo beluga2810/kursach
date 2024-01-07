@@ -50,7 +50,7 @@ const app = express()
 //         {
 //             status: 'user',
 //             id: 0,
-//             name: 'Yani',
+//             name: 'Yanix',
 //             email: 'devyangyani@gmail.com',
 //             password: '123qwerty123'
 //         }

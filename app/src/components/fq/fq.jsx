@@ -12,7 +12,7 @@ const FQ = () =>{
 
     return <section className={style.section}>
         <div className={style.wrapper}>
-            <h1 className={style.name}>F&Q</h1>
+            <h1 className={style.name}>FAQ</h1>
             <p className={style.name_text}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                 Iste reprehenderit provident aliquid voluptate reiciendis maiores 

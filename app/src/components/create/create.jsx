@@ -23,11 +23,11 @@ const Create = () =>{
         <div className={style.wrapper}>
             <div className={style.tittle}>
                 <h1>Создать экскурсию</h1>
-                <p>
+                {/* <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptate qui 
                     ipsam iusto nemo nisi ab eaque alias esse, at modi nobis optio debitis. 
                     Dolorum nobis molestiae officiis doloribus dignissimos?
-                </p>
+                </p> */}
             </div>
             <div className={style.input_field}>
                 <p>Название</p>

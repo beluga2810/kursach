@@ -61,9 +61,11 @@
     color: white;
     font-size: 16px;
     cursor: pointer;
+    padding-left: 10px;
+    
 }
 .login{
-    width: 80px;
+    width: 100px;
     height: 40px;
     /* background-color: #428af5; */
     display: flex;
@@ -71,6 +73,8 @@
     align-items: center;
     border-radius: 8px;
     border: 2px solid white;
+    margin-left: 10px
+    
 }
 
 .bell_wrapper{
