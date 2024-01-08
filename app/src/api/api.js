@@ -11,6 +11,14 @@ const instanse = axios.create({
 })
 
 
+export const DeleteRequestAPI = {
+    DeleteEvent(id) {
+      return instanse.delete(`/api/tour/delete`, { data: { id } }).then((response) => {
+        return response.data;
+      });
+    }
+  };
+
 
 export const GetRequestAPI = {
     GetAllTours(from, to) {
@@ -58,3 +66,4 @@ export const PostRequestAPI = {
         })
     },
 }
+

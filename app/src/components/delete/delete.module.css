@@ -1,0 +1,54 @@
+.section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+.wrapper{
+    width: 70%;
+    height: 100%;
+    padding-top: 50px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    flex-direction: column;
+    display: flex;
+}
+.input_field{
+    margin-bottom: 30px;
+    width: 100%;
+}
+.input_field input{
+    margin-top: 15px;
+    width: 20%;
+    height: 60px;
+    padding-left: 25px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.input_field textarea{
+    margin-top: 15px;
+    width: 100%;
+    height: 200px;
+    padding: 25px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.tittle{
+    width: 100%;
+    margin-bottom: 100px;
+}
+.button{
+    margin-top: 50px;
+    background-color: #42F58A;
+    width: 400px;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

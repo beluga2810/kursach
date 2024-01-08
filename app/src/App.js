@@ -10,6 +10,8 @@ import Reviews from './components/reviews/reviews'
 import Auth from './components/auth/auth'
 import Footer from './components/footer/footer'
 import Create from './components/create/create'
+import Delete from './components/delete/delete'
+
 
 
 const App = () =>{
@@ -38,6 +40,9 @@ const App = () =>{
   </Routes>
   <Routes>
     <Route path="/create" Component={Create}/>
+  </Routes>
+  <Routes>
+    <Route path="/delete" Component={Delete}/>
   </Routes>
   <Footer/>
 
