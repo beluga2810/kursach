@@ -82,3 +82,5 @@ CREATE TABLE ratings (
     rating INTEGER,
     comment VARCHAR(255)
 );
+
+

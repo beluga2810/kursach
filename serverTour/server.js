@@ -10,6 +10,7 @@ const companiesRouter = require('./routes/companies.routes.js')
 const transportRouter = require('./routes/transport.routes.js')
 const cityRouter = require('./routes/cities.routes.js')
 const ratingsRouter = require('./routes/ratings.routes.js')
+const bookedRouter = require('./routes/booked.routes.js')
 const app = express()
 
 
@@ -70,7 +71,7 @@ app.use(cookieParser())
 
 
 
-app.use('/api', userRouter, reviewsRouter, toursRouter, companiesRouter, transportRouter, cityRouter, ratingsRouter)
+app.use('/api', userRouter, reviewsRouter, toursRouter, companiesRouter, transportRouter, cityRouter, ratingsRouter, bookedRouter)
 
 
 // app.get('/tours', (req, res) =>{
