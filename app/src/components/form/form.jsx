@@ -43,7 +43,8 @@ const Forma = (props) =>{
     : <div className={style.button} onClick={() =>{
         PostRequestAPI.AuthCheck(email, password).then(data =>{
             if(data.error){
-                alert('Пользователь не найден')
+                alert(data.error)
+                console.log(data)
             } 
             else{
                 data.status && dispatch(SetProfile(data))
