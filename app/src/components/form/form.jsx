@@ -42,8 +42,13 @@ const Forma = (props) =>{
     }}>Регистрация</div>
     : <div className={style.button} onClick={() =>{
         PostRequestAPI.AuthCheck(email, password).then(data =>{
-            data.status && dispatch(SetProfile(data))
-            data.status && setTimeout(()=>navigate('/'), 500)
+            if(data.error){
+                alert('Пользователь не найден')
+            } 
+            else{
+                data.status && dispatch(SetProfile(data))
+                data.status && setTimeout(()=>navigate('/'), 500)
+            }
         })
         
         

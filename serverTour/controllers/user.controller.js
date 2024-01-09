@@ -17,8 +17,13 @@ class UserController{
     }
     async getOneUser(req, res){
         const {email, password} = req.body
-        const user = await db.query(`SELECT * FROM users WHERE (email) = ($1) AND (password) = ($2)`, [email, password])        
-        res.json(user.rows[0])
+        try { 
+            const user = await db.query(`SELECT * FROM users WHERE (email) = ($1) AND (password) = ($2)`, [email, password])        
+            res.json(user.rows[0])
+        } catch (error) {
+            console.error(error);
+            res.json({error : 'Пользователь не найден'})
+        }
     }
     async getAuthUser(req, res){
         const cookieValue = req.cookies.id
