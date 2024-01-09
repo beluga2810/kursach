@@ -44,7 +44,7 @@ const Tours = () =>{
     </div>
     <div className={style.abs_bottom}>
       <div>Подробнее</div>
-      <div>Купить</div>
+      <div>Забронировать</div>
     </div>
     <div className={style.image}>
 

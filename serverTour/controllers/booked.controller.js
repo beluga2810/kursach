@@ -22,7 +22,7 @@ class BookedController{
       }
       async getBooked(req, res){
         const booked = await db.query('SELECT * FROM booked_tours')
-        res.json(booked.rows[0])
+        res.json(booked.rows)
     }
 }
 module.exports = new BookedController()

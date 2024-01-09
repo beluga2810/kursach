@@ -71,7 +71,7 @@ const TourCard = () =>{
                 </div>
                 <div className={style.button} onClick={() =>{
                     alert('Забронировано, перейдите в личный кабинет, чтобы посмотреть вашу бронь')
-                    PostRequestAPI.AddBooked(ProfileData, tour.id)
+                    PostRequestAPI.AddBooked(ProfileData.id, tour.id)
                 }}>
                     Забронировать
                 </div>

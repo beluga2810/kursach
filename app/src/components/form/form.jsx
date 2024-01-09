@@ -23,7 +23,7 @@ const Forma = (props) =>{
     let ProfileData = useSelector(getProfileDate)
 
     useEffect(()=>{
-        ProfileData && navigate('/profile')
+        ProfileData.name && navigate('/profile')
     }, [ProfileData])
     
     return <div className={style.form}>
