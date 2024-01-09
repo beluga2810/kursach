@@ -18,7 +18,7 @@ class UserController{
     async getOneUser(req, res){
         const {email, password} = req.body
         const user = await db.query(`SELECT * FROM users WHERE (email) = ($1) AND (password) = ($2)`, [email, password])  
-        if (user.rowCount)
+        if (!user.rowCount)
         {
             res.json({error: 'Пользователь не найден'})
         }

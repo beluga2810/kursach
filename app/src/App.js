@@ -11,6 +11,7 @@ import Auth from './components/auth/auth'
 import Footer from './components/footer/footer'
 import Create from './components/create/create'
 import Delete from './components/delete/delete'
+import ProfilePage from './components/user-profile/user-profile'
 
 
 
@@ -37,6 +38,9 @@ const App = () =>{
   </Routes>
   <Routes>
     <Route path="/accaunt" Component={Auth}/>
+  </Routes>
+  <Routes>
+    <Route path="/profile" Component={ProfilePage}/>
   </Routes>
   <Routes>
     <Route path="/create" Component={Create}/>

@@ -40,6 +40,11 @@ export const GetRequestAPI = {
         return instanse.get('/api/user/auth').then(Response =>{
             return Response.data
         })
+    },
+    GetBooked(){
+        return instanse.get('/api/booked').then(Response =>{
+            return Response.data
+        })
     }
    
 }
@@ -62,6 +67,11 @@ export const PostRequestAPI = {
     },
     AddEvent( name, from_location, to_location, price, description, company, from_address, from_date, from_time, to_date, to_time, transport ){
         return instanse.post('/api/tour/create', { name, from_location, to_location, price, description, company, from_address, from_date, from_time, to_date, to_time, transport }).then(Response => {
+            return Response.data 
+        })
+    },
+    AddBooked(user_id, tour_id){
+        return instanse.post('/api/booked', { user_id, tour_id }).then(Response => {
             return Response.data 
         })
     },

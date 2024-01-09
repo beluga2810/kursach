@@ -3,7 +3,7 @@ const { use } = require('../server.js')
 
 class BookedController{
     async createBooked(req, res) {
-        const { user_id, tour_id } = req.body;
+        const { user_id, tour_id } = req.body
         const newBooking = await db.query(
           `INSERT INTO booked_tours (user_id, tour_id) VALUES ($1, $2) RETURNING *`,
           [user_id, tour_id]
@@ -20,5 +20,9 @@ class BookedController{
           res.status(500).json('Ошибка сервера');
         }
       }
+      async getBooked(req, res){
+        const booked = await db.query('SELECT * FROM booked_tours')
+        res.json(booked.rows[0])
+    }
 }
 module.exports = new BookedController()

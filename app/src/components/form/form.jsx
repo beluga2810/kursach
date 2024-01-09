@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import style from './form.module.css'
 import { PostRequestAPI } from '../../api/api'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { SetProfile } from '../redux/profile-reducer'
+import { getProfileDate } from '../redux/profile-reducer-selector'
 
 
 const Forma = (props) =>{
@@ -16,6 +17,14 @@ const Forma = (props) =>{
 
     let dispatch = useDispatch()
     let navigate = useNavigate()
+
+
+
+    let ProfileData = useSelector(getProfileDate)
+
+    useEffect(()=>{
+        ProfileData && navigate('/profile')
+    }, [ProfileData])
     
     return <div className={style.form}>
     <div className={style.error_massage}>

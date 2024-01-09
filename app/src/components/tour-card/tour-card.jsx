@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from 'react'
 import style from './tour-card.module.css'
 import { useLocation } from 'react-router-dom';
-import { GetRequestAPI } from '../../api/api';
+import { GetRequestAPI, PostRequestAPI } from '../../api/api';
 import mogilev_first from '../../assets/mogilev_first.png'
 import mogilev_second from '../../assets/mogilev_second.png'
 import mogilev_3th from '../../assets/mogilev_3th.png'
@@ -9,9 +9,13 @@ import {
     LeftOutlined,
     RightOutlined,
   } from '@ant-design/icons'
+import { useSelector } from 'react-redux';
+import { getProfileDate } from '../redux/profile-reducer-selector';
 
 
 const TourCard = () =>{
+
+    let ProfileData = useSelector(getProfileDate)
 
     let location = useLocation()
 
@@ -65,8 +69,11 @@ const TourCard = () =>{
                     <p><span>Дата обратного отправления</span> : {tour.to_date}</p>
                     <p><span>Время обратного отправления</span> : {tour.to_time}</p>
                 </div>
-                <div className={style.button}>
-                    Купить
+                <div className={style.button} onClick={() =>{
+                    alert('Забронировано, перейдите в личный кабинет, чтобы посмотреть вашу бронь')
+                    PostRequestAPI.AddBooked(ProfileData, tour.id)
+                }}>
+                    Забронировать
                 </div>
             </div>
         </div>
