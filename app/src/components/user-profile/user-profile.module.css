@@ -89,3 +89,15 @@
   .user_info .info_value {
     text-align: left;
   }
+
+  .button{
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42F58A;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}

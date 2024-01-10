@@ -1,4 +1,5 @@
 import axios from 'axios'
+// axios.get(url, { headers: { 'Content-Type': 'application/json; charset=utf-8' } });
 
 
 
@@ -6,7 +7,7 @@ const instanse = axios.create({
     baseURL: 'http://localhost/',
     withCredentials: true,
     headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8'
     },
 })
 
